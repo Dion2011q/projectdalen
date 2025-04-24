@@ -4,143 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Dalen</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
-            --header-bg: #f4f4f4;
-            --footer-bg: #f4f4f4;
-            --button-bg: #47aA42; /* Minecraft groen */
-            --button-text: #ffffff;
-            --button-hover-bg: #3c8c37; /* Donkerder Minecraft groen */
-            --accent-color: #47aA42; /* Minecraft groen */
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-            --header-bg: #1e1e1e;
-            --footer-bg: #1e1e1e;
-            --button-bg: #47aA42;
-            --button-hover-bg: #3c8c37;
-            --accent-color: #47aA42;
-        }
-
-        html, body {
-        height: 100%;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-
-        header {
-            background-color: var(--header-bg);
-            padding: 20px;
-            text-align: center;
-            transition: background-color 0.5s ease;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .headerlink {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .headertitle {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent-color);
-            letter-spacing: 2px;
-        }
-
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-        }
-
-        .gallery img {
-            width: 100%;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .links {
-            margin-top: 20px;
-        }
-
-        .links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .links a:hover {
-            color: var(--button-bg);
-        }
-
-        footer {
-            background-color: var(--footer-bg);
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            transition: background-color 0.5s ease;
-        }
-
-        .theme-toggle,
-        button {
-            position: relative;
-            padding: 10px 20px;
-            background-color: var(--button-bg);
-            color: var(--button-text);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .theme-toggle:hover,
-        button:hover {
-            background-color: var(--button-hover-bg);
-            transform: translateY(-2px);
-        }
-
-        .theme-toggle:active,
-        button:active {
-            transform: translateY(0);
-        }
-    </style>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="main-header">
-        <nav style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center; gap: 30px;">
+        <nav class="nav">
+            <div class="navdiv">
                 <span class="headertitle">Project Dalen</span>
-                <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
+                <ul class="headerul">
                     <li><a href="#info" class="headerlink">Info</a></li>
                     <li><a href="#gallerij" class="headerlink">Gallerij</a></li>
                     <li><a href="#spelers" class="headerlink">Spelers</a></li>
@@ -152,11 +24,25 @@
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="theme-toggle">Thema 🌙</button>
         </nav>
     </header>
-    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welkom op de Project Dalen website</h1>
+            </div>
+        </section></section>
+        <section class="nieuws-bluemap">
+            <div class="nieuws-container">
+                <img src="images/bluemap.png" alt="Bekijk Dalen van boven" class="nieuws-afbeelding">
+                <div class="nieuws-tekst">
+                    <h2>Bekijk nu Dalen van boven via de Bluemap!</h2>
+                    <p>Ontdek Dalen vanuit de lucht! Met de <strong>Bluemap</strong> kun je Dalen in detail bekijken! Klik hieronder om direct de kaart te openen.</p>
+                    <a href="https://nederland.map.geocraft.nl/#midden:247490:0:-524501:2072:0:0:0:1:flat" target="_blank" class="nieuws-link"><button><img id="bluemapicon" src="images/icons/bluemap.png">Bluemap &rarr;</button></a>
+                </div>
+            </div>
+        </section>
         <section>
             <h2>Foto Gallerij</h2>
             <div class="gallery">
-                <img src="https://via.placeholder.com/200" alt="Foto 1">
+                <img src="images/bluemap.png" alt="Foto 1">
                 <img src="https://via.placeholder.com/200" alt="Foto 2">
                 <img src="https://via.placeholder.com/200" alt="Foto 3">
                 <img src="https://via.placeholder.com/200" alt="Foto 4">
@@ -164,17 +50,11 @@
         </section>
         <section class="links">
             <h2>Links</h2>
-            <p><a href="https://discord.com" target="_blank">Join onze Discord</a></p>
+            <p><a href="https://discord.gg/geocraft" target="_blank">Join de Geocraft Discord</a></p>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 Project Dalen. Alle rechten voorbehouden.</p>
     </footer>
-    <script>
-        function toggleTheme() {
-            const currentTheme = document.body.getAttribute('data-theme');
-            document.body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-        }
-    </script>
 </body>
 </html>
