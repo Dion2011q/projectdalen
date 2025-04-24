@@ -1,0 +1,148 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg: #f4f4f4;
+    --footer-bg: #f4f4f4;
+    --button-bg: #47aA42; /* Minecraft groen */
+    --button-text: #ffffff;
+    --button-hover-bg: #3c8c37; /* Donkerder Minecraft groen */
+    --accent-color: #47aA42; /* Minecraft groen */
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --header-bg: #1e1e1e;
+    --footer-bg: #1e1e1e;
+    --button-bg: #47aA42;
+    --button-hover-bg: #3c8c37;
+    --accent-color: #47aA42;
+}
+
+html, body {
+height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.headerlink {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.headertitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: var(--button-bg);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    transition: background-color 0.5s ease;
+}
+
+.theme-toggle,
+button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover,
+button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+}
+
+.theme-toggle:active,
+button:active {
+    transform: translateY(0);
+}
