@@ -1,5 +1,3 @@
-# projectdalen
-
 # 🏘️ Dalen in GeoCraft
 
 This is the official website project for **Dalen in GeoCraft** — a 1:1 scale recreation of the town of Dalen (Drenthe, NL) in the GeoCraft Minecraft server.
