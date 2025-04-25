@@ -85,6 +85,11 @@ header h1 {
     font-weight: bold;
     color: var(--accent-color);
     letter-spacing: 2px;
+    text-decoration: none;
+}
+
+a .headertitle {
+    text-decoration: none;
 }
 
 main {
@@ -249,4 +254,71 @@ input {
     height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+.player-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.player-box {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--background-color);
+}
+
+.player-box img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.content {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.content h2 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.content p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.content button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
+
+.content button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .player-box {
+        flex-direction: column;
+    }
+    
+    .player-box img,
+    .content {
+        width: 100%;
+    }
 }
