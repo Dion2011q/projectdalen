@@ -11,6 +11,10 @@ This specific project focuses on **Dalen**, a village located in Drenthe, which 
 
 The website serves as a hub for progress updates, screenshots, maps, and fun insights into the town and the build process.
 
+ip: geocraft.nl
+
+https://geocraft.nl
+
 ---
 
 ## 🔧 Tech Stack
