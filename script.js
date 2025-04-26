@@ -49,16 +49,14 @@ function logout() {
     window.location.href = "login.html";
 }
 
-
-
 const menuToggle = document.querySelector('.menu-toggle');
 const headerUl = document.querySelector('.headerul');
 
-menuToggle.addEventListener('click', () => {
+menuToggle.addEventListener('click', (event) => {
+    event.stopPropagation(); 
     headerUl.classList.toggle('show');
 });
 
-// Klik buiten het menu om te sluiten
 document.addEventListener('click', (event) => {
     if (!menuToggle.contains(event.target) && !headerUl.contains(event.target)) {
         headerUl.classList.remove('show');
