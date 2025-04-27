@@ -132,9 +132,9 @@ footer {
     background-color: var(--footer-bg);
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;  
     transition: background-color 0.5s ease;
     display: flex;
     flex-direction: row;
@@ -157,44 +157,40 @@ footer {
 .theme-toggle:hover,
 button:hover {
     background-color: var(--button-hover-bg);
-    transform: translateY(-2px);
+    transform: scale(1.05);
 }
 
-.theme-toggle:active,
-button:active {
-    transform: translateY(0);
+.theme-toggle:active, button:active {
+    transform: scale(0.95);
 }
 
 
-.nieuws-bluemap {
+.news-section {
     margin: 20px;
 }
 
-.nieuws-container {
+.news-container {
     display: flex;
-    max-width: 90%;
+    max-width: 80%;
     max-height: 400px;
     margin: 0 auto;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.nieuws-afbeelding {
+.news-img {
     width: 50%;
     object-fit: cover;
 }
 
-.nieuws-tekst {
+.news-text {
     width: 50%;
     padding: 30px;
     background-color: var(--news-bg-color);
     vertical-align: middle;
 }
 
-.nieuws-link:hover {
-    background-color: #0056b3;
-}
 
 .buttonicon {
     width: 25px;
@@ -322,7 +318,7 @@ input {
     justify-content: space-between;
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -334,6 +330,13 @@ input {
     overflow: hidden;
     background-color: var(--news-bg-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.bouwwerk-box:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .bouwwerk-box img {
@@ -342,23 +345,48 @@ input {
     object-fit: cover;
 }
 
-.bouwwerk-text {
-    padding: 15px;
+.text-bouwwerk {
+    padding: 10px;
+    padding-top: 5px;
     flex: 1;
 }
 
-.text-content h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+
+.text-bouwwerk h3 {
+    margin-bottom: 1rem;
 }
 
-.bouwwerk-text p {
+.text-bouwwerk p {
     margin: 0;
     line-height: 1.5;
 }
 
 .menu-toggle {
     display: none;
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+iframe {
+    width: 500px;
+    height: 280px;
+    border-radius: 12px;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
