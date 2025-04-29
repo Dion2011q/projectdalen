@@ -1,4 +1,4 @@
-:root {
+[data-theme="light"] {
     --bg-color: #ffffff;
     --text-color: #000000;
     --header-bg: #f4f4f4;
@@ -74,11 +74,33 @@ header h1 {
     color: var(--text-color);
     font-weight: 500;
     cursor: pointer;
+    position: relative;
+    transition: color 0.5s ease;
 }
 
 .headerlink:hover {
     color: var(--accent-color);
+    transition: color 0.2s ease;
 }
+
+
+
+.headerlink::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.headerlink:hover::after {
+    width: 100%;
+}
+
 
 .headertitle {
     font-size: 2rem;
@@ -86,6 +108,7 @@ header h1 {
     color: var(--accent-color);
     letter-spacing: 2px;
     text-decoration: none;
+    transition: color 0.5s ease;
 }
 
 a .headertitle {
@@ -189,6 +212,7 @@ button:hover {
     padding: 30px;
     background-color: var(--news-bg-color);
     vertical-align: middle;
+    transition: background-color 0.5s ease;
 }
 
 
@@ -217,6 +241,37 @@ button:hover {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+.typewriter-container {
+    display: inline-block;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,4);
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    animation: typing 4s steps(60, end) forwards;
+}
+
+.blinker {
+    display: inline-block;
+    color: white;
+    width: 1ch;
+    font-size: 3rem;
+    vertical-align: middle;
+    text-align: left;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 32ch; }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 
 .login-container, .admin-container {
     background-color: var(--header-bg);
@@ -225,6 +280,7 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     width: 300px;
+    transition: background-color 0.5s ease;
 }
 
 label {
@@ -239,6 +295,7 @@ input {
     border: none;
     border-radius: 4px;
     background-color: var(--input-bg);
+    transition: background-color 0.5s ease;
     color: var(--text-color);
 }
 
@@ -257,6 +314,7 @@ input {
     height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
+    transition: background-color 0.5s ease;
 }
 
 .player-boxes {
@@ -272,10 +330,10 @@ input {
     display: flex;
     align-items: center;
     overflow: hidden;
-
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    background: var(--news-bg-color);
+    background-color: var(--news-bg-color);
+    transition: background-color 0.5s ease;
 }
 
 .player-box img {
@@ -306,11 +364,13 @@ input {
 .contentspelers h2 {
     margin: 0;
     color: var(--text-color);
+    transition: color 0.5s ease;
 }
 
 .contentspelers p {
     margin: 0;
     color: var(--text-color);
+    transition: color 0.5s ease;
 }
 
 .bouwwerken-box-container {
@@ -331,11 +391,13 @@ input {
     background-color: var(--news-bg-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
 
 .bouwwerk-box:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
@@ -375,7 +437,7 @@ input {
 }
 
 iframe {
-    width: 500px;
+    width: 498px;
     height: 280px;
     border-radius: 12px;
     border: 3px solid var(--accent-color);

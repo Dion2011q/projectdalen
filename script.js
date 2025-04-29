@@ -62,3 +62,18 @@ document.addEventListener('click', (event) => {
         headerUl.classList.remove('show');
     }
 });
+
+
+// Toggle theme and save preference in localStorage
+function toggleTheme() {
+    const currentTheme = document.body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme); // Save the theme in localStorage
+}
+
+// Load theme from localStorage on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light theme
+    document.body.setAttribute('data-theme', savedTheme);
+});
