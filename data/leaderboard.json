@@ -1,0 +1,13 @@
+{
+    "voortgang": {
+      "huizen_voltooid": 34,
+      "totaal_huizen": 1477,
+      "laatste_update": "2025-04-30"
+    },
+    "leaderboard": [
+      { "naam": "Dion", "gebouwen": 12 },
+      { "naam": "Martijn", "gebouwen": 5 },
+      { "naam": "", "gebouwen": 1 }
+    ]
+  }
+  
