@@ -77,3 +77,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light theme
     document.body.setAttribute('data-theme', savedTheme);
 });
+
+
+
+// Display the current year in the footer for the copyright notice
+document.getElementById('year').textContent = new Date().getFullYear();

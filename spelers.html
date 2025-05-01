@@ -22,10 +22,22 @@
                 </ul>
             </div>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="theme-toggle">Thema 🌙</button>
+            <button class="menu-toggle" aria-label="Menu openen">☰</button>
         </nav>
     </header>
     <main>
     <section class="player-boxes">
+        <div class="team-box">
+            <h1>Onze spelers</h1>
+            <p>Hieronder vind je een overzicht van de spelers die actief zijn in Project Dalen. Klik op hun naam om meer te leren over hun bouwwerken.</p>
+            <div class="playerimgteamcontent">
+                <img class="playerimgteam" src="https://crafatar.com/avatars/a272dedf88e5424b84d054e64dc37e6b" alt="Player 1">
+                <img class="playerimgteam" src="https://crafatar.com/avatars/04136b73d9d746a0b8a39f942562c374" alt="Player 2">
+                <img class="playerimgteam" src="https://crafatar.com/avatars/c69d3710109a4727949869db712e3dbd" alt="Player 3">
+                <img class="playerimgteam" src="https://crafatar.com/avatars/2405bb7ac1a24abe96545c820924fe09" alt="Player 4">
+            </div>
+        </div>
+
         <div class="player-box">
             <img src="https://crafatar.com/renders/body/a272dedf88e5424b84d054e64dc37e6b" class="playerimg" alt="Player 1">
             <div class="contentspelers">
@@ -61,7 +73,7 @@
     </section>
     </main>
     <footer>
-        <p>&copy; 2025 Project Dalen. Alle rechten voorbehouden.</p>
+        <p>&copy; <span id="year"></span> Project Dalen. Alle rechten voorbehouden.</p>
         <a href="https://geocraft.nl" target="_blank"><button><img class="buttonicon" src="images/icons/geocraft.png">Geocraft website</button></a>
     </footer>
 </body>
