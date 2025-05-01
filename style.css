@@ -483,6 +483,44 @@ iframe:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.progress-container {
+    background: var(--news-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar {
+    height: 25px;
+    background: #4caf50;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 10px;
+    justify-content: start;
+}
+
+.vak {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.completed {
+    background-color: #4caf50;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .player-box {
         flex-direction: column;
