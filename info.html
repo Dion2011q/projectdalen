@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voortgang Project Dalen</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .progress-container {
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .progress-bar {
+      height: 25px;
+      background: #4caf50;
+      width: 0%;
+      transition: width 0.3s ease-in-out;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      gap: 10px;
+      justify-content: start;
+    }
+    .vak {
+      width: 60px;
+      height: 60px;
+      border: 2px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .completed {
+      background-color: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Voortgang Project Dalen</h1>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <script>
+    fetch('/data/progress.json')
+      .then(response => response.json())
+      .then(data => {
+        const grid = document.getElementById('grid');
+        const bar = document.getElementById('progress-bar');
+
+        let completed = 0;
+        data.forEach(vak => {
+          const el = document.createElement('div');
+          el.className = 'vak';
+          el.textContent = vak.id;
+          if (vak.completed) {
+            el.classList.add('completed');
+            completed++;
+          }
+          grid.appendChild(el);
+        });
+
+        const percent = (completed / data.length) * 100;
+        bar.style.width = percent + '%';
+      });
+  </script>
+</body>
+</html>
