@@ -42,6 +42,6 @@ To run this project locally:
 
 ```bash
 git clone https://github.com/yourusername/projectdalen.git
-cd dalen-site
+cd projectdalen
 npm install
 npm run dev
