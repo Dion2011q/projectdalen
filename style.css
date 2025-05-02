@@ -551,7 +551,7 @@ iframe:hover {
         margin: 0;
         position: absolute;
         top: 80px; /* onder de header */
-        background: white;
+        background: var(--header-bg);
         max-height: 0;
         width: 100%;
         overflow: hidden;
@@ -561,7 +561,7 @@ iframe:hover {
 
     .headerul a {
         text-decoration: none;
-        color: black;
+        color: var(--text-color);
         font-size: 18px;
     }
 
