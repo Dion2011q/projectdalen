@@ -112,6 +112,10 @@ header h1 {
     transition: color 0.5s ease;
 }
 
+.headertitle:active {
+    color: var(--accent-color);
+}
+
 a .headertitle {
     text-decoration: none;
 }
