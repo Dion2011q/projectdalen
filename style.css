@@ -9,6 +9,7 @@
     --accent-color: #47aA42; /* Minecraft groen */
     --news-bg-color: rgb(239, 239, 239);
     --input-bg: #e2e2e2;
+    --zebra-color: rgba(0, 0, 0, 0.03); /* subtiel lichtgrijs */
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,7 @@
     --accent-color: #47aA42;
     --news-bg-color: #1e1e1e;
     --input-bg: #363636;
+    --zebra-color: rgba(255, 255, 255, 0.03); /* subtiel licht wit */
 }
 
 html, body {
@@ -526,6 +528,36 @@ iframe:hover {
     background-color: #4caf50;
     color: white;
 }
+
+.progress-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--news-bg-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .progress-table th,
+  .progress-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .progress-table th {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+  .progress-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .progress-table tbody tr:nth-child(odd) {
+    background-color: var(--zebra-color);
+  }
 
 @media (max-width: 768px) {    
     .player-box img, .content {

@@ -32,38 +32,110 @@
     </nav>
 </header>
 <main>
-  <h1>Voortgang Project Dalen</h1>
-  <div class="progress-container">
-    <div class="progress-bar" id="progress-bar"></div>
-  </div>
-  <div class="grid" id="grid"></div>
+        <h1>Voortgang Project Dalen</h1>
+        <p>Hier kun je de voortgang van het project volgen.</p>
+        <p>De voortgang wordt regelmatig bijgewerkt, dus kom snel terug voor meer informatie!</p>
+        <img src="images/voortgang.png" alt="Voortgang Project Dalen" class="progress-img">
+        <table class="progress-table">
+          <thead>
+            <tr>
+              <th>Plaats</th>
+              <th>Project</th>
+              <th>Punten</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>Dalen</td>
+              <td>421</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Arnhem</td>
+              <td>869</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Dedemsvaart</td>
+              <td>394</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Breda</td>
+              <td>308</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Nijmegen</td>
+              <td>892</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Rotterdam</td>
+              <td>287</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Leiden</td>
+              <td>517</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Middenbeemster</td>
+              <td>266</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Gouda</td>
+              <td>117</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Schiedam</td>
+              <td>103</td>
+            </tr>
+          </tbody>
+        </table>
 </main>
 <footer>
-    <p>&copy; <span id="year"></span> Project Dalen. Alle rechten voorbehouden.</p>
+  <p>&copy; <span id="year"></span> Project Dalen. Alle rechten voorbehouden.</p>
     <a href="https://geocraft.nl" target="_blank"><button><img class="buttonicon" src="images/icons/geocraft.png">Geocraft website</button></a>
 </footer>
-  <script>
-    fetch('/data/progress.json')
-      .then(response => response.json())
-      .then(data => {
-        const grid = document.getElementById('grid');
-        const bar = document.getElementById('progress-bar');
 
-        let completed = 0;
-        data.forEach(vak => {
-          const el = document.createElement('div');
-          el.className = 'vak';
-          el.textContent = vak.id;
-          if (vak.completed) {
-            el.classList.add('completed');
-            completed++;
-          }
-          grid.appendChild(el);
-        });
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tableBody = document.querySelector(".progress-table tbody");
+    const rows = Array.from(tableBody.querySelectorAll("tr"));
 
-        const percent = (completed / data.length) * 100;
-        bar.style.width = percent + '%';
-      });
-  </script>
+    // Sorteer de rijen op punten (kolom 3)
+    rows.sort((a, b) => {
+      const pointsA = parseInt(a.children[2].textContent);
+      const pointsB = parseInt(b.children[2].textContent);
+      return pointsB - pointsA;
+    });
+
+    // Plaatsnummers toekennen
+    let currentPlace = 1;
+    let previousPoints = null;
+    let sameRankCount = 0;
+
+    rows.forEach((row, index) => {
+      const points = parseInt(row.children[2].textContent);
+
+      if (points === previousPoints) {
+        row.children[0].textContent = currentPlace; // zelfde plaats
+        sameRankCount++;
+      } else {
+        currentPlace = index + 1;
+        row.children[0].textContent = currentPlace;
+        previousPoints = points;
+        sameRankCount = 1;
+      }
+
+      tableBody.appendChild(row); // opnieuw toevoegen
+    });
+  });
+</script>
 </body>
 </html>
