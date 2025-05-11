@@ -118,6 +118,12 @@ header h1 {
     color: var(--accent-color);
 }
 
+.headerbuttons {
+    display: flex;
+    align-items: center; /* Verticaal uitlijnen */
+    gap: 10px; /* Ruimte tussen de knoppen */
+}
+
 a .headertitle {
     text-decoration: none;
 }
@@ -203,15 +209,24 @@ button:hover {
     display: flex;
     max-width: 80%;
     max-height: 400px;
+    overflow: hidden;
     margin: 0 auto;
     border-radius: 15px;
-    overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .news-img {
     width: 50%;
     object-fit: cover;
+    background-color: var(--news-bg-color);
+    transition: background-color 0.5s ease;
+}
+
+#img-spelers-index {
+    width: 50%;
+    object-fit: contain;
+    background-color: var(--news-bg-color);
+    transition: background-color 0.5s ease;
 }
 
 .news-text {
@@ -228,6 +243,7 @@ button:hover {
     height: 25px;
     margin-right: 10px;
     vertical-align: middle;
+    border-radius: 2px;
 }
 
 .hero {
@@ -571,7 +587,15 @@ iframe:hover {
 
     .menu-toggle {
         display: flex;
+        position: relative; /* Zorg dat de menu-toggle relatief blijft */
     }
+
+        .theme-toggle {
+        position: relative; /* Zorg dat de knop relatief wordt gepositioneerd */
+        margin-right: 20px; /* Voeg 20px ruimte toe aan de rechterkant */
+    }
+
+
     .headerul {
         display: flex;
         flex-direction: column;
@@ -605,6 +629,22 @@ iframe:hover {
     .headertitle {
         font-size: 1.2rem;
         letter-spacing: 1px;
+        display: flex;
+        position: relative;
+        margin: 0;
+    }
+
+    .navdiv {
+        display: flex;
+        justify-content: left;
+
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Zorg dat de knoppen aan de rechterkant staan */
+        gap: 0; /* Verwijder extra ruimte tussen de knoppen */
     }
 
 
@@ -649,7 +689,7 @@ iframe:hover {
     .news-container {
         display: flex;
         max-width: 100%;
-        max-height: auto;
+        max-height: none;
         flex-direction: column;
     }
 
@@ -657,6 +697,11 @@ iframe:hover {
         width: 100%;
         height: 200px;
         object-fit: cover;
+    }
+
+    #img-spelers-index {
+        width: 100%;
+        object-fit: contain;
     }
     
     .news-text {

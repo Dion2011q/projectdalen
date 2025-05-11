@@ -6,7 +6,6 @@
   <title>Voortgang Project Dalen</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
-  <script src="progress.js" defer></script>
 
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -35,7 +34,7 @@
 <main>
         <h1>Voortgang Project Dalen</h1>
         <p>Hier kun je de voortgang van het project volgen.</p>
-        <p>De voortgang wordt regelmatig bijgewerkt, dus kom snel terug voor meer informatie!</p>
+        <p>De voortgang wordt elke maand bijgewerkt, dus kom snel terug voor meer informatie!</p>
         <img src="images/voortgang.png" alt="Voortgang Project Dalen" class="progress-img">
         <table class="progress-table">
           <thead>
@@ -103,5 +102,39 @@
   <p>&copy; <span id="year"></span> Project Dalen. Alle rechten voorbehouden.</p>
     <a href="https://geocraft.nl" target="_blank"><button><img class="buttonicon" src="images/icons/geocraft.png">Geocraft website</button></a>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tableBody = document.querySelector(".progress-table tbody");
+    const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+    // Sorteer de rijen op punten (kolom 3)
+    rows.sort((a, b) => {
+      const pointsA = parseInt(a.children[2].textContent);
+      const pointsB = parseInt(b.children[2].textContent);
+      return pointsB - pointsA;
+    });
+
+    // Plaatsnummers toekennen
+    let currentPlace = 1;
+    let previousPoints = null;
+    let sameRankCount = 0;
+
+    rows.forEach((row, index) => {
+      const points = parseInt(row.children[2].textContent);
+
+      if (points === previousPoints) {
+        row.children[0].textContent = currentPlace; // zelfde plaats
+        sameRankCount++;
+      } else {
+        currentPlace = index + 1;
+        row.children[0].textContent = currentPlace;
+        previousPoints = points;
+        sameRankCount = 1;
+      }
+
+      tableBody.appendChild(row); // opnieuw toevoegen
+    });
+  });
+</script>
 </body>
 </html>
