@@ -1,10 +1,54 @@
-function toggleTheme() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    document.body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+// ---------------------- THEMA EN HEADERKLEUR ----------------------
+function updateThemeColor() {
+    // Haal de actuele headerkleur uit de CSS-variabele
+    const headerBg = getComputedStyle(document.body).getPropertyValue('--header-bg').trim();
+
+    // Theme color voor Android/Chrome
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) themeMeta.setAttribute('content', headerBg);
+
+    // Status bar voor iOS
+    const appleStatusBar = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+    if (appleStatusBar) {
+        const isDark = document.body.getAttribute('data-theme') === 'dark';
+        appleStatusBar.setAttribute('content', isDark ? 'black-translucent' : 'default');
+    }
 }
 
+// Toggle theme and save preference in localStorage
+function toggleTheme() {
+    const currentTheme = document.body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeColor();
+}
 
-// Mock user data (for demonstration purposes)
+// Load theme from localStorage on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    updateThemeColor();
+});
+
+// ---------------------- MENU TOGGLE ----------------------
+const menuToggle = document.querySelector('.menu-toggle');
+const headerUl = document.querySelector('.headerul');
+
+if (menuToggle && headerUl) {
+    menuToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        headerUl.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menuToggle.contains(event.target) && !headerUl.contains(event.target)) {
+            headerUl.classList.remove('show');
+        }
+    });
+}
+
+// ---------------------- LOGIN/ADMIN ----------------------
 const users = [
     { username: "admin", password: "admin123", role: "admin" },
 ];
@@ -49,36 +93,6 @@ function logout() {
     window.location.href = "login.html";
 }
 
-const menuToggle = document.querySelector('.menu-toggle');
-const headerUl = document.querySelector('.headerul');
-
-menuToggle.addEventListener('click', (event) => {
-    event.stopPropagation(); 
-    headerUl.classList.toggle('show');
-});
-
-document.addEventListener('click', (event) => {
-    if (!menuToggle.contains(event.target) && !headerUl.contains(event.target)) {
-        headerUl.classList.remove('show');
-    }
-});
-
-
-// Toggle theme and save preference in localStorage
-function toggleTheme() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme); // Save the theme in localStorage
-}
-
-// Load theme from localStorage on page load
-window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light theme
-    document.body.setAttribute('data-theme', savedTheme);
-});
-
-
-
-// Display the current year in the footer for the copyright notice
-document.getElementById('year').textContent = new Date().getFullYear();
+// ---------------------- COPYRIGHT YEAR ----------------------
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();

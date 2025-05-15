@@ -26,6 +26,11 @@
     --zebra-color: rgba(255, 255, 255, 0.03); /* subtiel licht wit */
 }
 
+button, a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 html, body {
 height: 100%;
 }
@@ -39,6 +44,10 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a, .headerlink, .headerul a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 header {
@@ -112,10 +121,6 @@ header h1 {
     letter-spacing: 2px;
     text-decoration: none;
     transition: color 0.5s ease;
-}
-
-.headertitle:active {
-    color: var(--accent-color);
 }
 
 .headerbuttons {
@@ -247,15 +252,30 @@ button:hover {
 }
 
 .hero {
+    position: relative;
     width: 100%;
     min-height: 80vh;
-    background-image: url('images/hero.png');
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none; /* Zodat je geen last hebt van de video bij klikken */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 {
@@ -576,77 +596,10 @@ iframe:hover {
     transition: background-color 0.5s ease;
   }
 
-@media (max-width: 768px) {    
+@media (max-width: 768px) {  
     .player-box img, .content {
         width: 100%;
     }
-
-    header {
-        position: relative;
-    }
-
-    .menu-toggle {
-        display: flex;
-        position: relative; /* Zorg dat de menu-toggle relatief blijft */
-    }
-
-        .theme-toggle {
-        position: relative; /* Zorg dat de knop relatief wordt gepositioneerd */
-        margin-right: 20px; /* Voeg 20px ruimte toe aan de rechterkant */
-    }
-
-
-    .headerul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin: 0;
-        position: absolute;
-        top: 80px; /* onder de header */
-        background: var(--header-bg);
-        max-height: 0;
-        width: 100%;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        z-index: 1000;
-    }
-
-    .headerul a {
-        text-decoration: none;
-        color: var(--text-color);
-        font-size: 18px;
-    }
-
-    .headerul.show {
-        display: flex; 
-        transform: translateY(0);
-        opacity: 1;
-        max-height: 500px;
-    }
-
-    .headertitle {
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-        display: flex;
-        position: relative;
-        margin: 0;
-    }
-
-    .navdiv {
-        display: flex;
-        justify-content: left;
-
-    }
-
-    .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Zorg dat de knoppen aan de rechterkant staan */
-        gap: 0; /* Verwijder extra ruimte tussen de knoppen */
-    }
-
 
     .bouwwerken-box-container {
         flex-direction: column;
@@ -740,4 +693,112 @@ iframe:hover {
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
+}
+
+@media (max-width: 890px) {
+        header {
+        position: relative;
+    }
+
+
+    .theme-toggle {
+        position: relative; /* Zorg dat de knop relatief wordt gepositioneerd */
+        margin-right: 20px; /* Voeg 20px ruimte toe aan de rechterkant */
+    }
+
+
+    .headerul.show {
+        display: flex; 
+        transform: translateY(0);
+        opacity: 1;
+        max-height: 500px;
+    }
+
+    .headertitle {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        display: flex;
+        position: relative;
+        margin: 0;
+    }
+
+        .headerul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        background: var(--header-bg);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(.4,0,.2,1);
+        z-index: 1000;
+    }
+
+    .headerul.show {
+        max-height: 500px;
+    }
+
+    .headerul li {
+        width: 100%;
+        border-bottom: 1px solid var(--accent-color);
+    }
+
+    .headerul a {
+        display: block;
+        width: 100%;
+        padding: 18px 24px;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        text-align: left;
+        text-decoration: none;
+        background: none;
+        transition: background 0.2s;
+    }
+
+    .headerul a:hover {
+        background: var(--zebra-color);
+        color: var(--accent-color);
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        margin: 0;
+        z-index: 1100;
+        background-color: var(--button-bg);
+    }
+
+    .navdiv {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .headerbuttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Zorg dat de knoppen aan de rechterkant staan */
+        gap: 0; /* Verwijder extra ruimte tussen de knoppen */
+    }
 }
