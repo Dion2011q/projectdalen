@@ -221,7 +221,8 @@ button:hover {
 }
 
 .news-img {
-    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
     object-fit: cover;
     background-color: var(--news-bg-color);
     transition: background-color 0.5s ease;
@@ -648,6 +649,8 @@ iframe:hover {
 
     .news-img {
         width: 100%;
+        min-width: 100%;
+        max-width: 100%;
         height: 200px;
         object-fit: cover;
     }
