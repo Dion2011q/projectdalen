@@ -29,10 +29,18 @@
 button, a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+    font-family: 'MinecraftFont', sans-serif;
 }
 
 html, body {
 height: 100%;
+}
+
+@font-face {
+  font-family: 'MinecraftFont';
+  src: url('minecraft_font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -54,6 +62,7 @@ header {
     background-color: var(--header-bg);
     padding: 20px;
     text-align: center;
+    font-family: 'MinecraftFont', sans-serif;
     transition: background-color 0.5s ease;
 }
 
@@ -171,6 +180,7 @@ main {
 
 footer {
     background-color: var(--footer-bg);
+    font-family: 'MinecraftFont', sans-serif;
     text-align: center;
     padding: 10px;
     padding-left: 20px;
@@ -249,7 +259,6 @@ button:hover {
     height: 25px;
     margin-right: 10px;
     vertical-align: middle;
-    border-radius: 2px;
 }
 
 .hero {
@@ -659,6 +668,11 @@ iframe:hover {
         margin: 8px 0;
         font-size: 1.08em;
     }
+
+    #discordbutton {
+        max-height: 30px;
+    }
+
     @media (max-width: 700px) {
         .contact-card {
             flex-direction: column;
