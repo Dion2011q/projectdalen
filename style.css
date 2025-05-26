@@ -1,5 +1,5 @@
 [data-theme="light"] {
-    --bg-color: #ffffff;
+    --bg-color: #F5F5F5;
     --text-color: #000000;
     --header-bg: #f4f4f4;
     --footer-bg: #f4f4f4;
@@ -7,13 +7,13 @@
     --button-text: #ffffff;
     --button-hover-bg: #3c8c37; /* Donkerder Minecraft groen */
     --accent-color: #47aA42; /* Minecraft groen */
-    --news-bg-color: rgb(239, 239, 239);
-    --input-bg: #e2e2e2;
+    --news-bg-color: #eeeeee;
+    --input-bg: #ebebeb;
     --zebra-color: rgba(0, 0, 0, 0.03); /* subtiel lichtgrijs */
 }
 
 [data-theme="dark"] {
-    --bg-color: #121212;
+    --bg-color: #1A1A1A;
     --text-color: #ffffff;
     --header-bg: #1e1e1e;
     --footer-bg: #1e1e1e;
@@ -21,7 +21,7 @@
     --button-text: #ffffff;
     --button-hover-bg: #3c8c37;
     --accent-color: #47aA42;
-    --news-bg-color: #1e1e1e;
+    --news-bg-color: #262626;
     --input-bg: #363636;
     --zebra-color: rgba(255, 255, 255, 0.03); /* subtiel licht wit */
 }
