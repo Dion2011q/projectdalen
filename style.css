@@ -1,8 +1,8 @@
 [data-theme="light"] {
     --bg-color: #F5F5F5;
     --text-color: #000000;
-    --header-bg: #f4f4f4;
-    --footer-bg: #f4f4f4;
+    --header-bg: #e4e4e4;
+    --footer-bg: #e4e4e4;
     --button-bg: #47aA42; /* Minecraft groen */
     --button-text: #ffffff;
     --button-hover-bg: #3c8c37; /* Donkerder Minecraft groen */
@@ -599,54 +599,60 @@ font-weight: bold;
 background-color: var(--zebra-color);
 transition: background-color 0.5s ease;
 }
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
 
-      .contact-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 40px 0;
-    }
-    .contact-card {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        background: var(--news-bg-color);
-        transition: background 0.5s ease-in-out;
-        width: 80%;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.08);
-        border-radius: 18px;
-        padding: 32px 24px;
-        gap: 32px;
-        height: 800px;
-    }
+.contact-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--news-bg-color);
+    transition: background 0.5s ease-in-out;
+    width: 80%;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+    border-radius: 18px;
+    padding: 32px 24px;
+    gap: 32px;
+    height: 800px;
+}
 
-    .mc-skin img {
-        display: block;
-        background: var(--news-bg-color);
-        transition: background 0.5s ease-in-out;
-        width: 50%;
-        height: auto;
-    }
+.mc-skin img {
+    display: block;
+    background: var(--news-bg-color);
+    transition: background 0.5s ease-in-out;
+    width: 50%;
+    height: auto;
+}
 
-    .contact-info {
-        flex: 1;
-    }
+.contact-info {
+    flex: 1;
+}
 
-    .contact-info h2 {
-        margin-top: 0;
-        margin-bottom: 12px;
-        font-size: 1.6em;
-    }
-    .contact-info p {
-        margin: 8px 0;
-        font-size: 1.08em;
-    }
+.contact-info h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.6em;
+}
 
-    #discordbutton {
-        max-height: 30px;
-        box-sizing: border-box;
-        padding: 8px;
-    }
+.contact-info p {
+    margin: 8px 0;
+    font-size: 1.08em;
+}
+
+#discordbutton {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#discordbutton button {
+    display: flex;
+    align-items: center;
+  gap: 8px; /* ruimte tussen icon en tekst */
+}
 
 @media (max-width: 700px) {
     .contact-card {
@@ -699,7 +705,8 @@ transition: background-color 0.5s ease;
         align-items: center;
         align-self: center;
         padding: 10px;
-        width: 105%;
+        width: 100%;
+        margin: 0;
     }
     .contentspelers {
         width: 100%;
@@ -774,8 +781,8 @@ transition: background-color 0.5s ease;
         transform: scale(1.05);
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-
 }
+
 
 @media (max-width: 890px) {
         header {
@@ -870,12 +877,6 @@ transition: background-color 0.5s ease;
         justify-content: space-between;
     }
 
-    .headerbuttons {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
 
     .nav {
         display: flex;
@@ -883,4 +884,29 @@ transition: background-color 0.5s ease;
         justify-content: space-between; /* Zorg dat de knoppen aan de rechterkant staan */
         gap: 0; /* Verwijder extra ruimte tussen de knoppen */
     }
+}
+
+#contactbutton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 18px;
+    height: 44px;
+    font-size: 1rem;
+    font-family: 'MinecraftFont', sans-serif;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: 1;
+}
+#contactbutton img {
+    height: 18px;
+    width: 18px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
 }
