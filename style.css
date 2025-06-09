@@ -644,6 +644,8 @@ transition: background-color 0.5s ease;
 
     #discordbutton {
         max-height: 30px;
+        box-sizing: border-box;
+        padding: 8px;
     }
 
 @media (max-width: 700px) {
