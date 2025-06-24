@@ -888,7 +888,6 @@ transition: background-color 0.5s ease;
         gap: 0; /* Verwijder extra ruimte tussen de knoppen */
     }
 }
-
 #contactbutton {
     display: flex;
     align-items: center;
@@ -896,6 +895,9 @@ transition: background-color 0.5s ease;
 
     background-color: red;
     color: white;
+
+    font-family: Arial, sans-serif; /* Fix rare spacing van pixel-font */
+    font-size: 16px;
 
     border: none;
     border-radius: 5px;
@@ -906,7 +908,7 @@ transition: background-color 0.5s ease;
     line-height: 1;
     transition: background-color 0.3s ease, transform 0.2s ease;
 
-    border: 2px dashed yellow; /* ✅ Debug: toont de knopgrootte */
+    border: 2px dashed yellow; /* Debug */
 }
 
 #contactbutton img {
@@ -918,6 +920,6 @@ transition: background-color 0.5s ease;
     margin: 0;
     flex-shrink: 0;
 
-    background-color: blue;    /* ✅ Debug: toont img ruimte */
-    border: 2px solid lime;    /* ✅ Debug: toont echte img-grens */
+    background-color: blue;  /* Debug */
+    border: 2px solid lime;  /* Debug */
 }
