@@ -892,8 +892,8 @@ transition: background-color 0.5s ease;
 #contactbutton {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background-color: var(--button-bg);
+    gap: 5px; /* iets kleiner dan 8px, test */
+    background-color: red; /* tijdelijk rood om button ruimte te zien */
     color: var(--button-text);
     border: none;
     border-radius: 5px;
@@ -907,5 +907,8 @@ transition: background-color 0.5s ease;
     width: 20px;
     height: 20px;
     margin: 0;
-    display: block;
+    padding: 0;
+    vertical-align: middle;
+    display: block; /* voorkom whitespace */
+    background-color: blue; /* tijdelijk blauw om afbeelding ruimte te zien */
 }
