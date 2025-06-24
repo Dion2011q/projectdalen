@@ -906,8 +906,6 @@ transition: background-color 0.5s ease;
 #contactbutton img {
     width: 20px;
     height: 20px;
-    display: block;
     margin: 0;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
 }
