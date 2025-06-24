@@ -905,6 +905,7 @@ transition: background-color 0.5s ease;
 }
 
 #contactbutton img {
+    align-self: center;
     width: 20px;
     height: 20px;
     margin: 0;
