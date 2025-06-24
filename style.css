@@ -906,9 +906,10 @@ transition: background-color 0.5s ease;
 
 #contactbutton img {
     align-self: center;
-    width: 20px;
-    height: 20px;
+    width: 5px;
+    height: 5px;
     margin: 0;
     padding: 0;
     display: block;
+    background-color: blue;
 }
