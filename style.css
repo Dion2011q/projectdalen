@@ -645,7 +645,10 @@ transition: background-color 0.5s ease;
 
 #discordbutton {
     display: flex;
-    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 #discordbutton button {
@@ -889,20 +892,17 @@ transition: background-color 0.5s ease;
 #contactbutton {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 8px;
-    padding: 0 18px;
-    height: 44px;
-    font-size: 1rem;
-    font-family: 'MinecraftFont', sans-serif;
     background-color: var(--button-bg);
     color: var(--button-text);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    white-space: nowrap;
-    line-height: 1;
+    padding: 10px 20px;
+    margin: 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 #contactbutton img {
     height: 18px;
     width: 18px;
