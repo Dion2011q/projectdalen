@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template - Project Dalen</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+
+    <meta name="theme-color" id="theme-color-meta" content="#f4f4f4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" id="apple-status-bar-style" content="default">
+</head>
+<body data-theme="light">
+    <header class="main-header">
+        <nav class="nav">
+            <div class="navdiv">
+                <a href="index.html" class="headertitle"><span class="headertitle">Project Dalen</span></a>
+                <ul class="headerul">
+                    <li><a href="info.html" class="headerlink">Info</a></li>
+                    <li><a href="gallerij.html" class="headerlink">Gallerij</a></li>
+                    <li><a href="spelers.html" class="headerlink">Spelers</a></li>
+                    <li><a href="https://forms.gle/7DUkmB6hSn7CcaRJ8" target="_blank" class="headerlink">Solliciteren</a></li>
+                    <li><a href="contact.html" class="headerlink">Contact</a></li>
+                    <li><a href="https://geocraft.nl" target="_blank" class="headerlink">Geocraft site</a></li>
+                </ul>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="theme-toggle">Thema 🌙</button>
+            <button class="menu-toggle" aria-label="Menu openen">☰</button>
+        </nav>
+    </header>
+    <main>
+        <section class="player-boxes">
+            <div class="player-box">
+                <img src="https://crafatar.com/renders/body/a272dedf88e5424b84d054e64dc37e6b" class="playerimg" alt="Player 1">
+                <div class="contentspelers">
+                    <h2>Naam - in game name</h2>
+                    <p>beschrijving</p>
+                </div>
+            </div>
+        </section>
+        <section class="bouwwerken-box-container">
+            <div class="bouwwerk-box">
+                <img src="images/spelers/" alt="image">
+                <div class="text-bouwwerk">
+                    <h3>title foto 1</h3>
+                    <p>adres 1</p>
+                </div>
+            </div>
+            <div class="bouwwerk-box">
+                <img src="images/spelers/" alt="image">
+                <div class="text-bouwwerk">
+                    <h3>title foto 2</h3>
+                    <p>adres 2</p>
+                </div>
+            </div>
+            <div class="bouwwerk-box">
+                <img src="images/spelers/" alt="image">
+                <div class="text-bouwwerk">
+                    <h3>title foto 3</h3>
+                    <p>adres 3</p>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> Project Dalen. Alle rechten voorbehouden.</p>
+        <a href="https://geocraft.nl" target="_blank"><button><img class="buttonicon" src="images/icons/geocraft.png">Geocraft website</button></a>
+    </footer>
+</body>
+</html>
