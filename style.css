@@ -893,10 +893,10 @@ transition: background-color 0.5s ease;
     align-items: center;
     gap: 8px;
 
-    background-color: red;
+    background-color: red;      /* tijdelijk voor debugging */
     color: white;
 
-    font-family: Arial, sans-serif; /* Fix rare spacing van pixel-font */
+    font-family: Arial, sans-serif;
     font-size: 16px;
 
     border: none;
@@ -908,18 +908,21 @@ transition: background-color 0.5s ease;
     line-height: 1;
     transition: background-color 0.3s ease, transform 0.2s ease;
 
-    border: 2px dashed yellow; /* Debug */
+    border: 2px dashed yellow;  /* debugrand */
 }
 
 #contactbutton img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+    max-width: 24px;
+    max-height: 24px;
+    width: auto;
+    height: auto;
+
     display: block;
-    padding: 0;
+    object-fit: contain;
     margin: 0;
+    padding: 0;
     flex-shrink: 0;
 
-    background-color: blue;  /* Debug */
-    border: 2px solid lime;  /* Debug */
+    background-color: blue;     /* debugkleur */
+    border: 2px solid lime;     /* debugrand */
 }
