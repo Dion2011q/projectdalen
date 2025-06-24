@@ -892,15 +892,16 @@ transition: background-color 0.5s ease;
 #contactbutton {
     display: flex;
     align-items: center;
-    gap: 5px; /* iets kleiner dan 8px, test */
-    background-color: red; /* tijdelijk rood om button ruimte te zien */
-    color: var(--button-text);
+    gap: 8px; /* iets ruimer voor balans */
+    background-color: red;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: 10px 20px;
     margin: 0;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    line-height: 1; /* voorkomt verticale extra ruimte door tekst */
 }
 
 #contactbutton img {
@@ -908,7 +909,5 @@ transition: background-color 0.5s ease;
     height: 20px;
     margin: 0;
     padding: 0;
-    vertical-align: middle;
-    display: block; /* voorkom whitespace */
-    background-color: blue; /* tijdelijk blauw om afbeelding ruimte te zien */
+    display: block;
 }
