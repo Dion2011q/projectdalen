@@ -892,23 +892,17 @@ transition: background-color 0.5s ease;
     display: flex;
     align-items: center;
     gap: 8px;
-
-    background-color: red;      /* tijdelijk voor debugging */
+    background-color: var(--button-bg);
     color: white;
-
     font-family: Arial, sans-serif;
     font-size: 16px;
-
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: 10px 20px;
     margin: 0;
-
     line-height: 1;
     transition: background-color 0.3s ease, transform 0.2s ease;
-
-    border: 2px dashed yellow;  /* debugrand */
 }
 
 #contactbutton img {
@@ -916,13 +910,9 @@ transition: background-color 0.5s ease;
     max-height: 24px;
     width: auto;
     height: auto;
-
     display: block;
     object-fit: contain;
     margin: 0;
     padding: 0;
     flex-shrink: 0;
-
-    background-color: blue;     /* debugkleur */
-    border: 2px solid lime;     /* debugrand */
 }
