@@ -912,8 +912,8 @@ transition: background-color 0.5s ease;
 }
 
 #contactbutton img {
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     display: block;
     padding: 0;
