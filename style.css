@@ -425,6 +425,20 @@ input {
     flex-direction: row;
     gap: 32px;
 }
+
+.playerimgteamcontentindex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .news-img-spelers {
     display: flex;
     align-items: center;
@@ -455,8 +469,8 @@ input {
 .playerimgteamindex {
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 90%;
-    width: 90%;
+    height: 80%;
+    width: 80%;
     border-radius: 6px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
@@ -717,14 +731,6 @@ transition: background-color 0.5s ease;
         align-self: center;
     }
 
-    .playerimgteamcontent {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-
     .player-box img, .playerimg {
         height: 180px;
         max-width: 100%;
@@ -749,11 +755,6 @@ transition: background-color 0.5s ease;
         margin: 8px 0;
     }
 
-    .playerimgteamindex {
-        height: 70%;
-        width: 70%;
-    }
-
     .typewriter-container {
         white-space: normal;
         animation: none;
@@ -770,26 +771,11 @@ transition: background-color 0.5s ease;
         flex-direction: column;
     }
 
-    .news-img {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
     #img-spelers-index {
         width: 100%;
         object-fit: contain;
     }
-
-    .news-img-spelers {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-        padding: 0;
-    }
-    
+ 
     .news-text {
         width: 100%;
         background-color: var(--news-bg-color);
@@ -926,6 +912,57 @@ transition: background-color 0.5s ease;
         justify-content: space-between; /* Zorg dat de knoppen aan de rechterkant staan */
         gap: 0; /* Verwijder extra ruimte tussen de knoppen */
     }
+
+    .playerimgteamcontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+    .news-img-spelers {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .news-img-spelers {
+    margin-left: 0px;
+    
+}
+
+    .playerimgteamindex {
+        height: 70px;
+        width: 70px;
+    }
+
+    .news-img {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+        .news-container {
+        display: flex;
+        max-width: 100%;
+        max-height: none;
+        flex-direction: column;
+    }
+    .news-img, .news-img-spelers, #img-spelers-index {
+        width: 100%;
+        object-fit: cover;
+        min-width: 100%;
+        max-width: 100%;
+        height: 200px;
+    }
+    .news-text {
+        width: 100%;
+    }
+
 }
 #contactbutton {
     display: flex;
