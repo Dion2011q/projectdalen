@@ -41,7 +41,7 @@ https://geocraft.nl
 To run this project locally:
 
 ```bash
-git clone https://github.com/yourusername/projectdalen.git
+git clone https://github.com/Dion2011q/projectdalen.git
 cd projectdalen
 npm install
 npm run dev
